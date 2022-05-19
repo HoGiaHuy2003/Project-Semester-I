@@ -47,9 +47,10 @@ class Manager {
     }
 
     public function delete() {
-        $query_first = "DELETE FROM manager WHERE id = '".$this->id."'";
+        $query_first = "DELETE FROM customer WHERE manager_id = '".$this->id."'";
         $query_second = "DELETE FROM product WHERE manager_id = '".$this->id."'";
-        $query_third = "DELETE FROM customer WHERE manager_id = '".$this->id."'";
+        $query_third = "DELETE FROM manager WHERE id = '".$this->id."'";
+
         execute($query_first);
         execute($query_second);
         execute($query_third);

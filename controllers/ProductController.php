@@ -18,7 +18,7 @@ class ProductController extends BaseController {
     public function edit() {
         if(isset($_COOKIE['id'])) {
             $id = getGet('id');
-            $product = product::find_product($id);
+            $product = product::findProduct($id);
             $sql = "SELECT * FROM category";
             $category = executeResult($sql);
     
@@ -42,7 +42,7 @@ class ProductController extends BaseController {
     public function delete() {
         if(isset($_COOKIE['id'])) {
             $id = getGet('id');
-            $product = product::find_product($id);
+            $product = product::findProduct($id);
             $sql = "SELECT * FROM category";
             $category = executeResult($sql);
     

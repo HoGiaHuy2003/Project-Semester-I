@@ -50,7 +50,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-success" type="submit">Change Information</button>
+                    <button class="btn btn-success" type="submit">Change Information and Password</button>
                 </div>
             </form>
         </div>

@@ -32,8 +32,8 @@
                 </div>
                 <div class="form-group">
                     <label for="">Sex </label>
-                    <input type="radio" name="sex" value="female">Female
-                    <input type="radio" name="sex" value="male">Male
+                    <input required type="radio" name="sex" value="female">Female
+                    <input required type="radio" name="sex" value="male">Male
                 </div>
                 <div class="form-group">
                     <label for="">Birthday: </label>

@@ -60,7 +60,7 @@ class Product {
         execute($query);
     }
     
-    public static function find_product($id) {
+    public static function findProduct($id) {
         // if(isset($_COOKIE['id'])) {
             $sql = "SELECT * FROM product WHERE id = '$id'";
             $item = executeResult($sql, true);
@@ -84,15 +84,15 @@ class Product {
         // }
     }
 
-    public static function find_manager($id) {
-        $sql = "SELECT * FROM manager WHERE id = '$id'";
-        $item = executeResult($sql, true);
+    // public static function findManager($id) {
+    //     $sql = "SELECT * FROM manager WHERE id = '$id'";
+    //     $item = executeResult($sql, true);
 
-        $manager = new Manager();
-        $manager->id = $item['id'];
+    //     $manager = new Manager();
+    //     $manager->id = $item['id'];
 
-        return $manager;
-    }
+    //     return $manager;
+    // }
 
     public static function list() {
         // if(isset($_COOKIE['id'])) {
