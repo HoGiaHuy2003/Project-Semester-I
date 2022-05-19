@@ -8,12 +8,18 @@ class ManagerController extends BaseController {
     }
 
     public function edit() {
-        $id = getGet('id');
-        $manager = Manager::find($id);
+        if(isset($_COOKIE['id'])) {
+            $id = $_COOKIE['id'];
+            $manager = Manager::find($id);
+    
+            $this->view('manager/edit.php', [
+                'manager' => $manager
+            ]);
+        }
 
-        $this->view('manager/edit.php', [
-            'manager' => $manager
-        ]);
+        else {
+            $this->redirect('method=manager&action=login');
+        }
     }
 
     public function post() {
@@ -24,13 +30,27 @@ class ManagerController extends BaseController {
         $this->redirect('method=manager&action=login');
     }
 
-    public function delete() {
-        $id = getGet('id');
-        $manager = Manager::find($id);
+    public function confirmEdit() {
+        $manager = new Manager();
+        $manager->processForm();
+        $manager->save();
 
-        $this->view('manager/delete.php', [
-            'manager' => $manager
-        ]);
+        $this->redirect('method=product');
+    }
+
+    public function delete() {
+        if(isset($_COOKIE['id'])) {
+            $id = $_COOKIE['id'];
+            $manager = Manager::find($id);
+    
+            $this->view('manager/delete.php', [
+                'manager' => $manager
+            ]);
+        }
+
+        else {
+            $this->redirect('method=manager&action=login');
+        }
     }
 
     public function confirmDelete() {
@@ -39,7 +59,9 @@ class ManagerController extends BaseController {
         $manager->id = $id;
         $manager->delete();
 
-        $this->redirect('method=manager');
+        setcookie('id', $manager->id, time(), '/');
+
+        $this->redirect('');
     }
 
     public function login() {

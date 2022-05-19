@@ -30,6 +30,9 @@
             </form>
         </div>
         <a href="?method=manager&action=add">Have not got an account?</a>
+        <br>
+        <br>
+        <a href="http://localhost/project/public/">Back to home</a>
     </div>
 </body>
 </html>

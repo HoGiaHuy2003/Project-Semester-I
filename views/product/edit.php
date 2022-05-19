@@ -45,6 +45,14 @@
                     <input required type="text" name="description" class="form-control" value="<?=$product->description?>">
                 </div>
                 <div class="form-group">
+                    <label for="">Date_start</label>
+                    <input type="date" name="date_start" class="form-control" value="<?=$product->date_start?>">
+                </div>
+                <div class="form-group">
+                    <label for="">Date_end</label>
+                    <input type="date" name="date_end" class="form-control" value="<?=$product->date_end?>">
+                </div>
+                <div class="form-group">
                     <label for="">Category: </label>
                     <select name="category_id" value="<?=$product->category_id?>">
                         <option value="">--SELECT--</option>

@@ -43,10 +43,22 @@
                     <label for="">Address: </label>
                     <input required type="text" name="address" class="form-control">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="">Product_id: </label>
-                    <input readonly type="text" name="product_id" class="form-control" value="<?php echo $customer->id?>">
-                </div> -->
+                <div class="form-group">
+                    <label for="">Auction Price: </label>
+                    <input required type="number" name="auction_price" class="form-control" min="<?php echo $product->auction_price; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="">Why do you want to auction?</label>
+                    <input type="text" name="message" class="form-control">
+                </div>                
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="">Product_id: </label> -->
+                    <input readonly type="text" name="product_id" class="form-control" value="<?php echo $product->id; ?>" style="display: none;">
+                <!-- </div> -->
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="">Manager_id</label> -->
+                    <input readonly type="text" name="manager_id" class="form-control" value="<?php echo $manager->id; ?>" style="display: none;">
+                <!-- </div> -->
                 <br>
                 <div class="form-group">
                     <button class="btn btn-success" type="submit">Confirm-auction</button>

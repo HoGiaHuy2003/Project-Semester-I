@@ -47,8 +47,12 @@ class Manager {
     }
 
     public function delete() {
-        $sql = "DELETE FROM manager WHERE id = '".$this->id."'";
-        execute($sql);
+        $query_first = "DELETE FROM manager WHERE id = '".$this->id."'";
+        $query_second = "DELETE FROM product WHERE manager_id = '".$this->id."'";
+        $query_third = "DELETE FROM customer WHERE manager_id = '".$this->id."'";
+        execute($query_first);
+        execute($query_second);
+        execute($query_third);
     }
     
     public static function find($id) {
@@ -86,11 +90,11 @@ class Manager {
             $query = "UPDATE manager SET token = '$token' WHERE id = ".$data['id'];
             execute($query);
 
-            setcookie('token', $token, time() + 365 + 24 + 60 + 60, '/');
+            setcookie('token', $token, time() + (365 + 24 + 60 + 60), '/');
 
             // $data['id'] = getMD5Pwd($data['id']);
 
-            setcookie('id', $data['id'], time() + 365 + 24 + 60 + 60, '/');
+            setcookie('id', $data['id'], time() + (365 + 24 + 60 + 60), '/');
 
             header('Location: ?method=product');
             die();

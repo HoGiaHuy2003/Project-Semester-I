@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Age: </label>
-                    <input required type="number" name="age" class="form-control">
+                    <input type="number" name="age" class="form-control" min="0" max="100" required>
                 </div>
                 <div class="form-group">
                     <label for="">Sex </label>

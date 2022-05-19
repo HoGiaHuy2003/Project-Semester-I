@@ -17,7 +17,7 @@
             <br>
         </div>
         <div class="card-body">
-            <form action="?method=manager&action=post" method="post">
+            <form action="?method=manager&action=confirm-edit" method="post">
                 <div class="form-group">
                     <label for="">Full Name: </label>
                     <input type="text" name="id" value="<?=$manager->id?>" style="display: none">
@@ -50,7 +50,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-success" type="submit">Create Account</button>
+                    <button class="btn btn-success" type="submit">Change Information</button>
                 </div>
             </form>
         </div>

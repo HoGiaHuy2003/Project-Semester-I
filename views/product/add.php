@@ -34,10 +34,18 @@
                     <label for="">Description: </label>
                     <input type="text" name="description" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="">Date start: </label>
+                    <input type="date" name="date_start" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Date end: </label>
+                    <input type="date" name="date_end" class="form-control">
+                </div>
                 <!-- <div class="form-group">
-                    <label for="">Manager_id: </label>
-                    <input type="text" name="manager_id" class="form-control" readonly value="<?php echo $_COOKIE['id']; ?>">
-                </div> -->
+                    <label for="">Manager_id: </label> -->
+                    <input type="text" name="manager_id" class="form-control" readonly value="<?php echo $manager->id; ?>" style="display: none">
+                <!-- </div> -->
                 <div class="form-group">
                     <label for="">Category: </label>
                     <select name="category_id">

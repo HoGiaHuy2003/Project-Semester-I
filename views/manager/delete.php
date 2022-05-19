@@ -22,8 +22,10 @@
     echo '
         <tr>
             <td>'.$manager->fullname.'</td>
+            <td>'.$manager->email.'</td>
             <td>'.$manager->age.'</td>
             <td>'.$manager->sex.'</td>
+            <td>'.$manager->birthday.'</td>
         </tr>';
 ?>
             </tbody>

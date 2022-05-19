@@ -4,23 +4,31 @@ require_once('../models/Product.php');
 
 class ProductController extends BaseController {
     public function add() {
-        $sql = "SELECT * FROM category";
-        $category = executeResult($sql);
-        $this->view('product/add.php', [
-            'category' => $category
-        ]);
+        if(isset($_COOKIE['id'])) {
+            $sql = "SELECT * FROM category";
+            $category = executeResult($sql);
+            $this->view('product/add.php', [
+                'category' => $category
+            ]);
+        } else {
+            $this->redirect('method=manager&action=login');
+        }
     }
 
     public function edit() {
-        $id = getGet('id');
-        $product = product::find_product($id);
-        $sql = "SELECT * FROM category";
-        $category = executeResult($sql);
-
-        $this->view('product/edit.php', [
-            'product' => $product,
-            'category' => $category
-        ]);
+        if(isset($_COOKIE['id'])) {
+            $id = getGet('id');
+            $product = product::find_product($id);
+            $sql = "SELECT * FROM category";
+            $category = executeResult($sql);
+    
+            $this->view('product/edit.php', [
+                'product' => $product,
+                'category' => $category
+            ]);
+        } else {
+            $this->redirect('method=manager&action=login');
+        }
     }
 
     public function post() {
@@ -32,15 +40,20 @@ class ProductController extends BaseController {
     }
 
     public function delete() {
-        $id = getGet('id');
-        $product = product::find_product($id);
-        $sql = "SELECT * FROM category";
-        $category = executeResult($sql);
+        if(isset($_COOKIE['id'])) {
+            $id = getGet('id');
+            $product = product::find_product($id);
+            $sql = "SELECT * FROM category";
+            $category = executeResult($sql);
+    
+            $this->view('product/delete.php', [
+                'product' => $product,
+                'category' => $category
+            ]);
+        } else {
+            $this->redirect('method=manager&action=login');
+        }
 
-        $this->view('product/delete.php', [
-            'product' => $product,
-            'category' => $category
-        ]);
     }
 
     public function confirmDelete() {
@@ -53,10 +66,26 @@ class ProductController extends BaseController {
     }
 
     public function index() {
-        $productList = Product::list();
+        if(isset($_COOKIE['id'])) {
+            $productList = Product::list();
+            $index = 0;
+        
+            $this->view('product/index.php', [
+                'productList' => $productList,
+                'index' => $index
+            ]);
+        }
+
+        else {
+            $this->redirect('method=manager&action=login');
+        }
+    }
+
+    public function show() {
+        $productList = Product::auctions();
         $index = 0;
 
-        $this->view('product/index.php', [
+        $this->view('product/show.php', [
             'productList' => $productList,
             'index' => $index
         ]);

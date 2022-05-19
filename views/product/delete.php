@@ -11,13 +11,15 @@
 </head>
 <body>
     <div class="container">
-        <h2>Are you sure to delete your account?</h2>
+        <h2>Are you sure to delete your product?</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Thumbnail</th>
+                    <th>Date Start</th>
+                    <th>Date End</th>
                     <!-- <th>Category</th> -->
                 </tr>
             </thead>
@@ -28,6 +30,8 @@
             <td>'.$product->name.'</td>
             <td>'.$product->price.'</td>
             <td>'.$product->thumbnail.'</td>
+            <td>'.$product->date_start.'</td>
+            <td>'.$product->date_end.'</td>
         ';
         // <td>'.$product->category_id.'</td>
 

@@ -15,6 +15,7 @@ switch($method) {
     case 'customer':
         require_once('../controllers/CustomerController.php');
         $controller = new CustomerController();
+    break;
     default:
         require_once('../controllers/IndexController.php');
         $controller = new IndexController();

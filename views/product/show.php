@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container">
-    <a href="?method=product&action=add"><button class="btn btn-success" style="margin-bottom: 20px;">Add Product</button></a>
+    <!-- <a href="?method=product&action=add"><button class="btn btn-success" style="margin-bottom: 20px;">Add Product</button></a> -->
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -27,18 +27,14 @@
                 <th>Price</th>
                 <th>Thumbnail</th>
                 <th>Category</th>
-                <th>Date Start</th>
-                <th>Date End</th>
                 <!-- <th>Manager_id</th> -->
-                <th style="width: 60px"></th>
-                <th style="width: 60px"></th>
                 <th style="width: 60px"></th>
             </tr>
         </thead>
         <tbody>
 <?php
 foreach($productList as $item) {
-    echo '
+    echo '            
             <tr>
                 <td>'.(++$index).'</td>
                 <td>'.$item->name.'</td>
@@ -47,31 +43,15 @@ foreach($productList as $item) {
                     <img src="'.$item->thumbnail.'" style="width: 250px">
                 </td>
                 <td>'.$item->category.'</td>
-                <td>'.$item->date_start.'</td>
-                <td>'.$item->date_end.'</td>
                 <td>
-                    <a href="?method=product&action=edit&id='.$item->id.'"><button class="btn btn-warning">Edit</button></a>
-                </td>
-                <td>
-                    <a href="?method=product&action=delete&id='.$item->id.'"><button class="btn btn-danger">Delete</button></a>
-                </td>
-                <td>
-                    <a href="?method=customer&action=showCustomer&id='.$item->id.'"><button class="btn btn-primary">Show Attendee</button></a>
+                    <a href="?method=customer&action=add&product_id='.$item->id.'&id='.$item->manager_id.'"><button class="btn btn-primary">Auction</button></a>
                 </td>
             </tr>';
 }
 ?>
         </tbody>
     </table>
-<?php
-    echo '            
     <a href="http://localhost/project/public/">Back to home</a>
-    <br>
-    <a href="?method=manager&action=edit">Change Your Information</a>
-    <br>
-    <a href="?method=manager&action=delete">Delete Your Account</a>
-    ';
-?>
 </div>
 </body>
 </html>

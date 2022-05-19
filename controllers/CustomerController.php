@@ -4,11 +4,29 @@ require_once('../models/Customer.php');
 
 class CustomerController extends BaseController {
     public function add() {
-        $id = getGet('id');
-        $customer = Customer::find($id);
-        $this->view('customer/index.php', [
-            'customer' => $customer
-        ]);
+            $product_id = getGet('product_id');
+            $manager_id = getGet('id');
+            $manager = Customer::findManager($manager_id);
+            $product = Customer::findProduct($product_id);
+            $this->view('customer/index.php', [
+                'manager' => $manager,
+                'product' => $product
+            ]);
+    }
+
+    public function customer() {
+        if(isset($_COOKIE['id'])) {
+            $id = getGet('id');
+            $customerList = Customer::showCustomer($id);
+            $index = 0;
+
+            $this->view('customer/customer.php', [
+                'customerList' => $customerList,
+                'index' => $index
+            ]);
+        } else {
+            $this->redirect('method=manager&action=login');
+        }
     }
 
     // public function edit() {

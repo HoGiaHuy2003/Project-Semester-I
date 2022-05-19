@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../../../../public/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../../../../public/css/themify-icons/themify-icons.css">
-    <link href="http://yoursite.com/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://localhost/project/public/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/project/public/css/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="http://yoursite.com/themify-icons.css">
     <span class="ti-download"></span>
 </head>
 <body   >
@@ -17,11 +17,11 @@
       <div class="header">
         <div class="navbar" style="z-index: 100; left: 0;" >
           <div class="logo">
-            <img src="../index/Auctions Table.png" style="width: 90px;">
+            <img src="http://localhost/project/public/images/Auctions%20Table.png" style="width: 90px;">
           </div>
         <div class="nav">              
                 <li class="nav-item">
-                  <a class="nav-link" href="#">AUCTION</a>
+                  <a class="nav-link" href="?method=product&action=show">AUCTION</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">CATEGORY</a>
@@ -35,7 +35,7 @@
         </div>
         <div class="nav">
           <a href="#" class="ti-search"></a>
-          <a href="#" class="ti-user"></a>
+          <a href="?method=product" class="ti-user"></a>
         </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ we have a vast experience of organizing auctions for past 25 years.
       <div class="footer">
         <div class="clearfix">
           <div class="box" style="color: white;">
-          <img src="../index/To make cool text like this, select some text and hit the Effects tab in your top toolbar..png" width="100%" height="130px">
+          <img src="http://localhost/project/public/images/To%20make%20cool%20text%20like%20this,%20select%20some%20text%20and%20hit%20the%20Effects%20tab%20in%20your%20top%20toolbar..png" width="100%" height="130px">
           </div>
           <div class="box" style="color: white;">
             <p>ADDRESS: </p>

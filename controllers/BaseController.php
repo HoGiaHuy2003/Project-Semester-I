@@ -13,6 +13,9 @@ class BaseController {
             case 'edit': 
                 $this->edit();
             break;
+            case 'confirm-edit':
+                $this->confirmEdit();
+            break;
             case 'delete': 
                 $this->delete();
             break;
@@ -24,9 +27,16 @@ class BaseController {
             break;
             case 'confirm-login':
                 $this->confirmLogin(); 
+            break;
             case 'confirm':
                 $this->confirm();
             break; 
+            case 'show':
+                $this->show();
+            break;
+            case 'showCustomer':
+                $this->customer();
+            break;
             case '':
             case 'index': 
                 $this->index();
@@ -45,6 +55,8 @@ class BaseController {
     public function doAction($action) {}
     public function login() {}
     public function confirmLogin() {}
+    public function show() {}
+    public function confirmEdit() {}
 
     public function view($path, $arr = []) {
         foreach($arr as $key => $val) {
